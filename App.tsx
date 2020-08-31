@@ -25,7 +25,7 @@ export default function App() {
   return (
     <CustomThemeProvider>
       <Routes />
-      <StatusBar style="auto" />
+      <StatusBar style="inverted" />
     </CustomThemeProvider>
   );
 }
