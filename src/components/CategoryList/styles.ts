@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const List = styled.ScrollView.attrs({
   horizontal: true,
+  showsHorizontalScrollIndicator: false,
 })`
   padding: 8px 0 24px;
 `;
