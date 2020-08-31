@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -11,20 +10,26 @@ export const Container = styled.View`
 `;
 
 export const Avatar = styled.TouchableOpacity`
-  background: ${colors.tag};
+  background: ${props => props.theme.colors.tag};
 
   width: 32px;
   height: 32px;
   border-radius: 16px;
 `;
 
+export const AvatarImage = styled.Image`
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+`;
+
 export const OnlineStatus = styled.View`
-  background: ${colors.green};
+  background: ${props => props.theme.colors.green};
 
   width: 10px;
   height: 10px;
   border-radius: 10px;
-  border: 2px solid ${colors.primary};
+  border: 2px solid ${props => props.theme.colors.primary};
 
   position: absolute;
   bottom: 0;

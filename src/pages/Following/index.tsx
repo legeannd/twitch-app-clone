@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 
 import { Wrapper, Container, Main } from './styles';
 import Header from '../../components/Header';

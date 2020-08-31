@@ -1,22 +1,36 @@
 import React from 'react';
 import { MaterialIcons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
-import { Container, Avatar, OnlineStatus, RightSide, Button } from './styles';
-import colors from '../../styles/colors';
+import streamAvatar from '../../images/stream_avatar.png';
+
+import { Container, Avatar, AvatarImage, OnlineStatus, RightSide, Button } from './styles';
+
+import { useTheme } from '../../hooks/theme';
 
 const Header: React.FC = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <Container>
       <Avatar>
+        <AvatarImage  source={streamAvatar}/>
         <OnlineStatus />
       </Avatar>
 
       <RightSide>
+        <Button onPress={() => toggleTheme()}>
+          <Feather
+            name={theme.name === 'dark' ? 'sun' : 'moon'}
+            size={26} 
+            color={theme.colors.black}
+          />
+        </Button>
+
         <Button>
           <MaterialIcons
             name="notifications-none"
             size={26}
-            color={colors.black}
+            color={theme.colors.black}
           />
         </Button>
 
@@ -24,7 +38,7 @@ const Header: React.FC = () => {
           <MaterialCommunityIcons
             name="message-outline"
             size={26}
-            color={colors.black}
+            color={theme.colors.black}
           />
         </Button>
 
@@ -32,7 +46,7 @@ const Header: React.FC = () => {
           <Feather
             name="search"
             size={26}
-            color={colors.black}
+            color={theme.colors.black}
           />
         </Button>
       </RightSide>

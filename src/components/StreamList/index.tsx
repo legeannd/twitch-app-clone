@@ -1,6 +1,7 @@
 import React from 'react';
 
 import streamThumbnail from '../../images/stream_thumbnail.jpg';
+import streamAvatar from '../../images/stream_avatar.png';
 
 import {
   List, 
@@ -26,7 +27,7 @@ const StreamList: React.FC = () => {
       <StreamColumn>
         <StreamRow>
           <StreamHeader>
-            <StreamAvatar />
+            <StreamAvatar source={streamAvatar} />
             <StreamUsername numberOfLines={1}>legeannd</StreamUsername>
           </StreamHeader>
 

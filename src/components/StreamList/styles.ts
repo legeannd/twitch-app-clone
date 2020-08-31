@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import colors from '../../styles/colors';
 
 export const List = styled.View`
   padding: 8px 0 24px;
@@ -34,25 +33,25 @@ export const StreamHeader = styled.View`
   align-items: center;
 `;
 
-export const StreamAvatar = styled.View`
+export const StreamAvatar = styled.Image`
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: ${colors.tag};
+  background: ${props => props.theme.colors.tag};
 `;
 
 export const StreamUsername = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.colors.black};
   margin-left: 5px;
   font-family: roboto_700;
 `;
 
 export const StreamDescription = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.colors.black};
 `;
 
 export const StreamCategory = styled.Text`
-  color: ${colors.gray};
+  color: ${props => props.theme.colors.gray};
   font-family: roboto_500;
 `;
 
@@ -62,14 +61,14 @@ export const TagRow = styled.View`
 `;
 
 export const TagView = styled.View`
-  background: ${colors.tag};
+  background: ${props => props.theme.colors.tag};
   padding: 2px 8px;
   border-radius: 10px;
   margin-right: 5px;
 `;
 
 export const TagText = styled.Text`
-  color: ${colors.black};
+  color: ${props => props.theme.colors.black};
   font-family: roboto_500;
   font-size: 13px;
 `

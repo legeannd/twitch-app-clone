@@ -1,5 +1,6 @@
 import React from 'react';
-import { Text } from 'react-native';
+
+import streamAvatar from '../../images/stream_avatar.png';
 
 import { 
   List,
@@ -17,9 +18,9 @@ const ChannelList: React.FC = () => {
   const ChannelItem = () => (
     <ChannelContainer>
       <LeftSide>
-        <Avatar />
+        <Avatar source={streamAvatar}/>
         <Column>
-          <Username>rocketseat_oficial</Username>
+          <Username>legeannd</Username>
           <Info>36 new videos</Info>
         </Column>
       </LeftSide>
