@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { MaterialIcons, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 
 import streamAvatar from '../../images/stream_avatar.png';
@@ -9,10 +10,15 @@ import { useTheme } from '../../hooks/theme';
 
 const Header: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
+  const { navigate } = useNavigation();
+
+  const handleNavigateToProfile = useCallback(() => {
+    navigate('Profile');
+  }, []);
 
   return (
     <Container>
-      <Avatar>
+      <Avatar onPress={handleNavigateToProfile}>
         <AvatarImage  source={streamAvatar}/>
         <OnlineStatus />
       </Avatar>

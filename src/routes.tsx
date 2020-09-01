@@ -1,16 +1,32 @@
 import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ThemeContext } from 'styled-components/native';
 
 import Following from './pages/Following';
+import Profile from './pages/Profile';
 import ComingSoon from './pages/ComingSoon';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const { Navigator, Screen } = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const Routes: React.FC = () => { 
   const { colors } = useContext(ThemeContext);
+
+  const HomeNavigator = () => {
+    return (
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen name="Following" component={Following} />
+        <Stack.Screen name="Profile" component={Profile} />
+      </Stack.Navigator>
+    );
+  };
 
   return (
     <NavigationContainer>
@@ -41,7 +57,7 @@ const Routes: React.FC = () => {
       >
         <Screen 
           name="Following" 
-          component={Following} 
+          component={HomeNavigator} 
           options={{
             tabBarIcon: ({ size, focused}) => {
               return (
