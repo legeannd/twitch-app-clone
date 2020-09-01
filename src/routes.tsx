@@ -1,19 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { ThemeContext } from 'styled-components/native';
 
 import Following from './pages/Following';
 import Profile from './pages/Profile';
 import ComingSoon from './pages/ComingSoon';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
+import { useTheme } from './hooks/theme';
 
 const { Navigator, Screen } = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => { 
-  const { colors } = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   const HomeNavigator = () => {
     return (
@@ -30,11 +31,13 @@ const Routes: React.FC = () => {
 
   return (
     <NavigationContainer>
+      { theme.name === 'light' ? <StatusBar style="dark"/> : <StatusBar style="light"/> }
+
       <Navigator
         tabBarOptions={{
           style: {
             height: 60,
-            backgroundColor: colors.primary,
+            backgroundColor: theme.colors.primary,
             borderTopWidth: 0,
           },
           tabStyle: {
@@ -51,8 +54,8 @@ const Routes: React.FC = () => {
             fontSize: 11,
             marginTop: 5,
           },
-          inactiveTintColor: colors.black,
-          activeTintColor: colors.purple
+          inactiveTintColor: theme.colors.black,
+          activeTintColor: theme.colors.purple
         }}
       >
         <Screen 
@@ -64,7 +67,7 @@ const Routes: React.FC = () => {
                 <Ionicons
                   name="md-heart"
                   size={size}
-                  color={focused ? colors.purple : colors.black}
+                  color={focused ? theme.colors.purple : theme.colors.black}
                 />
               )
             }
@@ -78,7 +81,7 @@ const Routes: React.FC = () => {
                 <MaterialCommunityIcons
                   name="compass-outline"
                   size={size}
-                  color={focused ? colors.purple : colors.black}
+                  color={focused ? theme.colors.purple : theme.colors.black}
                 />
               )
             }
@@ -93,7 +96,7 @@ const Routes: React.FC = () => {
                 <Ionicons
                   name="md-browsers"
                   size={size}
-                  color={focused ? colors.purple : colors.black}
+                  color={focused ? theme.colors.purple : theme.colors.black}
                 />
               )
             }
@@ -108,7 +111,7 @@ const Routes: React.FC = () => {
                 <MaterialCommunityIcons
                   name="trophy-outline"
                   size={size}
-                  color={focused ? colors.purple : colors.black}
+                  color={focused ? theme.colors.purple : theme.colors.black}
                 />
               )
             }

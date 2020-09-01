@@ -1,13 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
 
-import { Container } from './styles';
+import { Wrapper, Container, Main } from './styles';
+import ProfileHeader from '../../components/ProfileHeader';
 
 const Profile: React.FC = () => {
   return (
-    <Container>
-      <Text>Profile</Text>
-    </Container>
+    <Wrapper>
+      <ProfileHeader />
+      
+      <Container>
+        <Main>
+            
+        </Main>
+      </Container>
+    </Wrapper>
   );
 };
 

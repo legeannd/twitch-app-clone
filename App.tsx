@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { AppLoading } from 'expo';
-import { CustomThemeProvider } from './src/hooks/theme';
+import { CustomThemeProvider, useTheme } from './src/hooks/theme';
 import {
   Roboto_400Regular,
   Roboto_500Medium,
@@ -25,7 +25,6 @@ export default function App() {
   return (
     <CustomThemeProvider>
       <Routes />
-      <StatusBar style="inverted" />
     </CustomThemeProvider>
   );
 }
