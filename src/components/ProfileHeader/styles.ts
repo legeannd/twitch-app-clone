@@ -36,7 +36,8 @@ export const ProfileInfo = styled.View`
 export const Avatar = styled.Image`
   width: 80px;
   height: 80px;
-  border: 2px solid ${props => props.theme.colors.primary};
+  border: 2px;
+  border-color: ${props => props.theme.colors.primary}; 
   border-radius: 40px;
 `;
 
@@ -48,19 +49,23 @@ export const Info = styled.View`
 export const ProfileName = styled.Text`
   font-family: roboto_700;
   font-size: 22px;
-
+  color: ${props => props.theme.colors.black};
 `;
 
-export const ProfileLastLive = styled.Text``;
+export const ProfileLastLive = styled.Text`
+  color: ${props => props.theme.colors.black};
+`;
 
 export const LastLiveDate = styled.Text`
   font-family: roboto_700;
+  color: ${props => props.theme.colors.black};
 `;
 
 export const ProfileFollowers = styled.Text`
   font-family: roboto_700;
   margin-left: 14px;
   margin-top: 10px;
+  color: ${props => props.theme.colors.black};
 `;
 
 export const ManageProfileButtons = styled.View`
