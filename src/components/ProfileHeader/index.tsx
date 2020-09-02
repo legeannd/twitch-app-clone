@@ -1,12 +1,15 @@
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
+import streamAvatar from '../../images/stream_avatar.png';
 import bannerImage from '../../images/profile_banner.jpeg';
 
 import { 
   Container, 
   Banner, 
   HeaderBannerButtons, 
-  BannerButton, 
+  BannerButtonContainer, 
   ProfileInfo, 
   Avatar, 
   Info, 
@@ -16,25 +19,33 @@ import {
   ProfileFollowers,
   ManageProfileButtons,
   ProfileButton,
+  ProfileButtonText,
 } from './styles';
 
 const ProfileHeader: React.FC = () => {
+  const { goBack } = useNavigation();
+
   return (
     <Container>
       <Banner source={bannerImage}/>
 
       <HeaderBannerButtons>
-        <BannerButton>back</BannerButton>
-        <BannerButton>3 dots</BannerButton>
+        <BannerButtonContainer onPress={() => goBack()} >
+          <Feather name="chevron-left" size={24} style={{ color: "#fff"}} />
+        </BannerButtonContainer>
+
+        <BannerButtonContainer>
+          <Feather name="more-horizontal" size={24} style={{ color: "#fff"}} />
+        </BannerButtonContainer>
       </HeaderBannerButtons>
       
       <ProfileInfo>
-        <Avatar />
+        <Avatar source={streamAvatar}/>
         
         <Info>
           <ProfileName>legeannd</ProfileName>
           <ProfileLastLive>Last live 
-            <LastLiveDate>August 27</LastLiveDate>
+            <LastLiveDate> August 27</LastLiveDate>
           </ProfileLastLive>
         </Info>
       
@@ -43,8 +54,14 @@ const ProfileHeader: React.FC = () => {
       <ProfileFollowers>20k followers</ProfileFollowers>
       
       <ManageProfileButtons>
-        <ProfileButton>Go Live</ProfileButton>
-        <ProfileButton>View Dashboard</ProfileButton>
+        <ProfileButton>
+          <Feather name="video" size={18} style={{ marginRight: 10}}/>
+          <ProfileButtonText>Go Live</ProfileButtonText>
+        </ProfileButton>
+
+        <ProfileButton>
+          <ProfileButtonText>View Dashboard</ProfileButtonText>
+        </ProfileButton>
       </ManageProfileButtons>
 
     </Container>
