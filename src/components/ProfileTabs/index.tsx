@@ -14,7 +14,7 @@ const ProfileTabs: React.FC = () => {
         <TabText>About</TabText>
       </Tab>
       <Tab>
-        <TabText isActive>Schedule</TabText>
+        <TabText>Schedule</TabText>
       </Tab>
       <Tab>
         <TabText>Videos</TabText>

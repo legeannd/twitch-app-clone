@@ -6,6 +6,7 @@ import ProfileHeader from '../../components/ProfileHeader';
 import CategoryList from '../../components/CategoryList';
 import StreamList from '../../components/StreamList';
 import ProfileTabs from '../../components/ProfileTabs';
+import PastBroadcast from '../../components/PastBroadcast';
 
 interface Item {
   key: string;
@@ -25,7 +26,7 @@ const Profile: React.FC = () => {
       },
       {
         key: 'TAB_HEADER3',
-        render: () => (<Container><CategoryList /></Container>)
+        render: () => (<Container><PastBroadcast /></Container>)
       },
       {
         key: 'TAB_HEADER4',
