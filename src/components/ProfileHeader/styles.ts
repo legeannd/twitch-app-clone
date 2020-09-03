@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
+  background: ${props => props.theme.colors.primary};
 `;
 
 export const Banner = styled.Image`
@@ -36,7 +37,7 @@ export const ProfileInfo = styled.View`
 export const Avatar = styled.Image`
   width: 80px;
   height: 80px;
-  border: 2px;
+  border-width: 2px;
   border-color: ${props => props.theme.colors.primary}; 
   border-radius: 40px;
 `;

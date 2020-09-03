@@ -12,6 +12,7 @@ export const Wrapper = styled.SafeAreaView`
 
 export const Container = styled.View`
   padding-left: 14px;
+  padding-right: 14px;
 `;
 
 export const Main = styled.View``;
