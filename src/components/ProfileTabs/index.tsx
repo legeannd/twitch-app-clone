@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { Container, Tab, TabText } from './styles';
 
 const ProfileTabs: React.FC = () => {
-  const [isActive, setIsActive] = useState(false);
 
   return (
     <Container>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList } from 'react-native';
 
-import { Wrapper, Container, Main } from './styles';
+import { Wrapper, Container, Main, PastBroadcastContainer } from './styles';
 import ProfileHeader from '../../components/ProfileHeader';
 import CategoryList from '../../components/CategoryList';
 import ProfileTabs from '../../components/ProfileTabs';
@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
       {
         key: 'C4',
         render: () => (
-          <Container>
+          <PastBroadcastContainer>
             <PastBroadcast 
               componentWidth="95%" 
               componentHeight="110px" 
@@ -52,7 +52,7 @@ const Profile: React.FC = () => {
               textSize="16px"
               titleSize="20px"
             />
-          </Container>)
+          </PastBroadcastContainer>)
       },
       {
         key: 'RECENT_BROADCASTS',

@@ -11,8 +11,13 @@ export const Wrapper = styled.SafeAreaView`
 `;
 
 export const Container = styled.View`
-  margin: 0 14px;
+  padding-left: 14px;
+  padding-right: 14px;
+`;
+
+export const PastBroadcastContainer = styled.View`
   flex-direction: row;
+  margin-left: 14px;
 `;
 
 export const Main = styled.View``;
