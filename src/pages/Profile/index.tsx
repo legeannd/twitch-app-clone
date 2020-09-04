@@ -7,6 +7,7 @@ import CategoryList from '../../components/CategoryList';
 import ProfileTabs from '../../components/ProfileTabs';
 import PastBroadcast from '../../components/PastBroadcast';
 import ProfilePageCategoriesTitle from '../../components/ProfilePageCategoriesTitle';
+import RecentBroadcasts from '../../components/RecentBroadcasts';
 
 interface Item {
   key: string;
@@ -60,7 +61,7 @@ const Profile: React.FC = () => {
       },
       {
         key: 'C5',
-        render: () => (<Container><CategoryList /></Container>)
+        render: () => (<Container><RecentBroadcasts /></Container>)
       },
       {
         key: 'STREAMS_BY_CATEGORY',

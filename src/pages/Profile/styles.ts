@@ -15,9 +15,8 @@ export const Container = styled.View`
   padding-right: 14px;
 `;
 
-export const PastBroadcastContainer = styled.View`
+export const PastBroadcastContainer = styled(Container)`
   flex-direction: row;
-  margin-left: 14px;
 `;
 
 export const Main = styled.View``;
