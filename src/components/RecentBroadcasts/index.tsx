@@ -14,7 +14,7 @@ const RecentBroadcasts: React.FC = () => {
 
       <StreamTextBlock>
         <PastBroadcastTitle numberOfLines={1} >RECRIANDO A PÁGINA DE PERFIL DA TWITCH</PastBroadcastTitle>
-        <Username>legeannd</Username>
+        <Username>Science & Technology</Username>
         <BroadcastMetaText>5m views {'\u00B7'} today</BroadcastMetaText>
       </StreamTextBlock>
     </Container>

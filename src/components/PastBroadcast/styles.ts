@@ -48,9 +48,11 @@ export const PastBroadcastTitle = styled.Text<SizeProps>`
 export const Username = styled.Text`
   font-family: roboto_400;
   font-size: 14px;
+  color: ${props => props.theme.colors.black};
 `;
 
 export const BroadcastMetaText = styled.Text`
   font-family: roboto_400;
   font-size: 14px;
+  color: ${props => props.theme.colors.black};
 `;
