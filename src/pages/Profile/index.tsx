@@ -4,9 +4,9 @@ import { FlatList } from 'react-native';
 import { Wrapper, Container, Main } from './styles';
 import ProfileHeader from '../../components/ProfileHeader';
 import CategoryList from '../../components/CategoryList';
-import StreamList from '../../components/StreamList';
 import ProfileTabs from '../../components/ProfileTabs';
 import PastBroadcast from '../../components/PastBroadcast';
+import ProfilePageCategoriesTitle from '../../components/ProfilePageCategoriesTitle';
 
 interface Item {
   key: string;
@@ -17,28 +17,58 @@ const Profile: React.FC = () => {
   const { data } = React.useMemo(() => {
     const items: Item[] = [
       {
-        key: 'TAB_HEADER',
+        key: 'C1',
         render: () => <ProfileHeader />
       },
       {
-        key: 'TAB_HEADER2',
+        key: 'C2',
         render: () => (<Container><ProfileTabs /></Container>)
       },
       {
-        key: 'TAB_HEADER3',
-        render: () => (<Container><PastBroadcast /></Container>)
+        key: 'C3',
+        render: () => (
+          <Container>
+            <PastBroadcast 
+              componentWidth="100%" 
+              componentHeight="240px" 
+              textSize="18px"
+              titleSize="22px"
+            />
+          </Container>)
       },
       {
-        key: 'TAB_HEADER4',
-        render: () => (<Container><StreamList /></Container>)
+        key: 'C4',
+        render: () => (
+          <Container>
+            <PastBroadcast 
+              componentWidth="95%" 
+              componentHeight="110px" 
+              textSize="16px"
+              titleSize="20px"
+            />
+            <PastBroadcast 
+              componentWidth="95%" 
+              componentHeight="110px" 
+              textSize="16px"
+              titleSize="20px"
+            />
+          </Container>)
       },
       {
-        key: 'TAB_HEADER5',
-        render: () => (<Container><StreamList /></Container>)
+        key: 'RECENT_BROADCASTS',
+        render: () => (<Container><ProfilePageCategoriesTitle>Recent broadcasts</ProfilePageCategoriesTitle></Container>)
       },
       {
-        key: 'TAB_HEADER6',
-        render: () => (<Container><StreamList /></Container>)
+        key: 'C5',
+        render: () => (<Container><CategoryList /></Container>)
+      },
+      {
+        key: 'STREAMS_BY_CATEGORY',
+        render: () => (<Container><ProfilePageCategoriesTitle>legeannd's stream by category</ProfilePageCategoriesTitle></Container>)
+      },
+      {
+        key: 'C6',
+        render: () => (<Container><CategoryList /></Container>)
       }
     ];
 

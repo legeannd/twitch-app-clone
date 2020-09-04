@@ -1,14 +1,16 @@
 import styled from 'styled-components/native';
 
+import { SizeProps } from './index';
+
 export const Container = styled.View`
   flex: 1;
   margin: 5px 0;
 `;
 
-export const StreamThumb = styled.View`  
+export const StreamThumb = styled.View<SizeProps>`  
   flex: 1;  
-  width: 100%;
-  height: 240px;
+  width: ${props => props.componentWidth};
+  height: ${props => props.componentHeight};
   margin-bottom: 10px;
   position: relative;
 `;
@@ -30,22 +32,25 @@ export const StreamThumbImage = styled.Image`
   height: 100%;
 `;
 
-export const PastBroadcastText = styled.Text`
-  font-size: 18px;
+export const PastBroadcastText = styled.Text<SizeProps>`
+  font-size: ${props => props.textSize};
   font-family: roboto_700;
   color: #762DE4;
 `;
 
-export const PastBroadcastTitle = styled.Text`
-  font-size: 22px;
+export const PastBroadcastTitle = styled.Text<SizeProps>`
+  font-size: ${props => props.titleSize};
   font-family: roboto_700;
+  margin-right: 14px;
   color: ${props => props.theme.colors.black};
 `;
 
 export const Username = styled.Text`
   font-family: roboto_400;
+  font-size: 14px;
 `;
 
 export const BroadcastMetaText = styled.Text`
   font-family: roboto_400;
+  font-size: 14px;
 `;
